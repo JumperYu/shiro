@@ -9,9 +9,10 @@
 </head>
 <body>
 	${requestScope.error}
-	<form action="login" method="post">
+	<form action="" method="post">
 		用户名:		<input type="text" name="username" />
 		密    码:		<input type="password" name="password" />
+		 下次自动登录：<input type="checkbox" name="rememberMe" value="true"><br/>
 		<input type="submit" value="登陆">
 	</form>
 	<a href="success.jsp">成功</a>

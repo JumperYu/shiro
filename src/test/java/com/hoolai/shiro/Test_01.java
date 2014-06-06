@@ -3,10 +3,13 @@ package com.hoolai.shiro;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.codec.Base64;
+import org.apache.shiro.codec.Hex;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.apache.shiro.util.Factory;
 import org.junit.Assert;
 import org.junit.Test;
@@ -144,7 +147,13 @@ public class Test_01 {
 	}
 
 	@Test
-	public void testMZD5(){
-
+	public void testEncode(){
+		Base64.encode("".getBytes());
+		Hex.encode("".getBytes());
+	}
+	
+	@Test
+	public void testSalt(){
+		System.out.println(ByteSource.Util.bytes("admin8d78869f470951332959580424d4bf4f"));
 	}
 }
